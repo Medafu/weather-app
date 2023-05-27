@@ -35,3 +35,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Credits
 Background image by Kalen Emsley on [Unsplash](https://unsplash.com/photos/Bkci_8qcdvQ)
+[Ico file](https://icon-icons.com/icon/Clear-day-cloud-good-weather-morning--sun/51096)

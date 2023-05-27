@@ -1,12 +1,12 @@
 import SearchBar from "./SearchBar"
-import Image from "next/image"
 
 type JsonRequest = {
   name: string,
   temp: number,
   temp_min: number,
   temp_max: number,
-  weather: string
+  weather: string,
+  icon: string,
 } | undefined
 
 export default async function Home({ searchParams }: {
@@ -14,6 +14,7 @@ export default async function Home({ searchParams }: {
 }) {
   const param = searchParams['c']
   let data: JsonRequest = undefined
+
   const fetchWeather = async (cityName: string) => {
     const api_key = process.env.API_KEY
     console.log(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${api_key}&units=metric`)
@@ -29,6 +30,7 @@ export default async function Home({ searchParams }: {
       temp_max: weather.main.temp_max as number,
       temp_min: weather.main.temp_min as number,
       weather: weather.weather[0].main as string,
+      icon: weather.weather[0].icon as string,
     }
     console.log(data)
   }
@@ -45,9 +47,9 @@ function RenderWeather({ data }: {
   data: JsonRequest
 }) {
   return(
-    <>
+    <div className="text-white font-monoton">
       <p>City: {data?.name}</p>
       <p>Temp: {data?.temp}</p>
-    </>
+    </div>
   ) 
 }
