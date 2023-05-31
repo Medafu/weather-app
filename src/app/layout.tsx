@@ -10,7 +10,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-[url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b')] bg-cover bg-blend-multiply bg-black/50 bg-no-repeat">
+      <body className="bg-[url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b')] bg-cover bg-blend-multiply bg-black/50 bg-no-repeat text-white">
         {children}
       </body>
     </html>
