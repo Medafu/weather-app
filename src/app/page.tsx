@@ -13,6 +13,7 @@ export default async function Home({ searchParams }: {
   searchParams: {'c': string}
 }) {
   const param = searchParams['c']
+  let renderedOutput = null;
   let data: JsonRequest = undefined
   let error: boolean = false;
 
@@ -39,10 +40,18 @@ export default async function Home({ searchParams }: {
     console.log(data)
   }
 
+  if (param != undefined) {
+    if (!error) {
+      renderedOutput = <RenderWeather data={data} />
+    } else {
+      renderedOutput = <RenderError />
+    }
+  }  
+
   return (
     <>
       <SearchBar />
-      {param && !error ? <RenderWeather data={data} /> : <RenderError />}
+      {renderedOutput}
     </>
   )
 }
