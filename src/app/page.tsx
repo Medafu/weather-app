@@ -39,13 +39,16 @@ export default async function Home({ searchParams }: {
     }
     console.log(data)
   }
-
+  
+  console.log(param)
   if (param != undefined) {
     if (!error) {
       renderedOutput = <RenderWeather data={data} />
     } else {
       renderedOutput = <RenderError />
     }
+  } else {
+    renderedOutput = null
   }  
 
   return (

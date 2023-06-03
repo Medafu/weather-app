@@ -11,8 +11,9 @@ export default function SearchBar() {
   
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    if (city) {
-      router.push(`?c=${city}`)
+    let trimmed = city.trim()
+    if (trimmed) {
+      router.push(`?c=${trimmed}`)
     }
   }
   return(
