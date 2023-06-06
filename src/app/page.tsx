@@ -37,10 +37,8 @@ export default async function Home({ searchParams }: {
         icon: weather.weather[0].icon as string,
       }
     }
-    console.log(data)
   }
   
-  console.log(param)
   if (param != undefined) {
     if (!error) {
       renderedOutput = <RenderWeather data={data} />
